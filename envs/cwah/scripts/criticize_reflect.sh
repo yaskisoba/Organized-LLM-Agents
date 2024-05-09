@@ -1,6 +1,6 @@
 kill -9 $(lsof -t -i :6314)
 python ../testing_agents/criticize_reflect.py \
---dataset_path ../dataset/test_env_set_help.pik \
+--dataset_path  /home/yas/Documentos/ihealth-group/multiagents/Organized-LLM-Agents/envs/cwah/dataset/test_env_set_help.pik
 --prompt_template_path ../LLM/prompt_multi_comm.csv \
 --mode test \
 --executable_file ../../executable/linux_exec.v2.3.0.x86_64 \
