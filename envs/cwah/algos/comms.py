@@ -18,8 +18,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union, Callable
 curr_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(f'{curr_dir}')
 
-from LLM.llm_wrapper import oai_wrapper
-from agents.LLM_agent import LLM_agent
+from envs.cwah.LLM.llm_wrapper import oai_wrapper
+from envs.cwah.agents.LLM_agent import LLM_agent
 import logging
 
 logger = logging.getLogger("__main__")

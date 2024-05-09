@@ -1,12 +1,12 @@
-from utils import utils_environment as utils
+from envs.cwah.utils import utils_environment as utils
 import sys
 import os
 
 curr_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(f'{curr_dir}/../../virtualhome/simulation/')
 
-from environment.unity_environment import UnityEnvironment as BaseUnityEnvironment
-from evolving_graph import utils as utils_env
+from virtualhome.simulation.environment.unity_environment import UnityEnvironment as BaseUnityEnvironment
+from virtualhome.simulation.evolving_graph import utils as utils_env
 import pdb
 import numpy as np
 import copy

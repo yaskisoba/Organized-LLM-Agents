@@ -6,7 +6,7 @@ from matplotlib.patches import Rectangle
 import json
 import sys
 sys.path.append('../watch_and_help/')
-from utils import utils_environment as utils
+from envs.cwah.utils import utils_environment as utils
 
 
 def get_random_goal(graph, episode_id):

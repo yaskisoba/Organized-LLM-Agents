@@ -17,7 +17,7 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(f'{curr_dir}')
 from comms import *
 from collections import defaultdict
-from agents import LLM_agent
+from envs.cwah.agents import LLM_agent
 import logging
 logger = logging.getLogger("__main__")
 

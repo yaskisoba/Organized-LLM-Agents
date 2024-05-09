@@ -1,12 +1,12 @@
 import numpy as np
 import random
-from simulation.evolving_graph.utils import load_graph_dict, load_name_equivalence
-from simulation.evolving_graph.environment import EnvironmentState, EnvironmentGraph, GraphNode
+from virtualhome.simulation.evolving_graph.utils import load_graph_dict, load_name_equivalence
+from virtualhome.simulation.evolving_graph.environment import EnvironmentState, EnvironmentGraph, GraphNode
 import scipy.special
 import ipdb
 import pdb
 import sys
-import simulation.evolving_graph.utils as vh_utils
+import virtualhome.simulation.evolving_graph.utils as vh_utils
 import json
 import copy
 

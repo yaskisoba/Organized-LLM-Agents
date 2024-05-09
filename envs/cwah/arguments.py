@@ -18,7 +18,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='RL')
 
     parser.add_argument('--dataset_path', default = './dataset/test_env_set_help.pik', type=str, help="The path of the environments where we test")
-    parser.add_argument('--log_path', default = '../log/', type=str, help="The path of the logs")
+    parser.add_argument('--log_path', default = '/home/yas/Documentos/ihealth-group/multiagents/Organized-LLM-Agents/envs/cwah/log/', type=str, help="The path of the logs")
     parser.add_argument('--mode', type=str, default='full', help='record folder name')
 
     parser.add_argument('--num-per-apartment', type=int, default=3, help='Maximum #episodes/apartment')
@@ -39,7 +39,7 @@ def get_args():
         choices=['full', 'rgb', 'visibleid', 'partial', 'full_image', 'normal_image'],
     )
     
-    parser.add_argument('--test_task', default=(0, 5, 10, 16, 20, 26, 30, 32, 40, 49), type=int, nargs='+',
+    parser.add_argument('--test_task', default=1, type=int, nargs='+',
                         help='task ids to be tested')
 
     # Exec args
@@ -104,7 +104,7 @@ def get_args():
         help="wheter to generate video")    
 
     # LLM parameters
-    parser.add_argument('--lm_id_list', nargs='+', type=str, default='facebook/opt-13b',
+    parser.add_argument('--lm_id_list', nargs='+', type=str, default='gpt-4',
                         help='name for openai engine or huggingface model name/path')
     parser.add_argument("--llm_config_list", nargs='+', default=None, type=dict, help="llm configs, provide here or in the file llm_configs.json")
     parser.add_argument('--prompt_template_path', default='LLM/prompt_nocom.csv',
@@ -115,7 +115,7 @@ def get_args():
     parser.add_argument("--n", default=1, type=int)
     parser.add_argument("--logprobs", default=1, type=int)
     parser.add_argument("--echo", action='store_true', help="to include prompt in the outputs")
-    parser.add_argument("--agent_num", default=2, type=int)
+    parser.add_argument("--agent_num", default=3, type=int)
     parser.add_argument("--config", default = None, type = str, help="config file")
     
     # comm args

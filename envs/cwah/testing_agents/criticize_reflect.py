@@ -10,19 +10,21 @@ import json
 import random
 import numpy as np
 from pathlib import Path
-from envs.unity_environment import UnityEnvironment
-from agents import LLM_agent
-from arguments import get_args
-from algos.arena_mp2 import ArenaMP
+from envs.cwah.envs.unity_environment import UnityEnvironment
+from envs.cwah.agents import LLM_agent
+from envs.cwah.arguments import get_args
+from envs.cwah.algos.arena_mp2 import ArenaMP
 import logging
-from LLM import *
+from envs.cwah.LLM import *
 
 if __name__ == '__main__':
     args = get_args()
     mode = f"{args.mode}_env{args.test_task}_{args.agent_num}agents_{args.lm_id_list}_org{args.organization_instructions}" + ("_comm" if args.comm else "") + ("_random_start_comm" if args.random_start_comm else "")
-    coordinator_log = open(f'{args.log_path}{mode}_coordinator.log', 'w')
+    # if not os.path.exists(f'{args.log_path}{mode}_coordinator.log'):
+      # os.makedirs(os.path.dirname(f'{args.log_path}{mode}_coordinator.log'))
+    coordinator_log = open(f'{args.log_path}{mode}_coordinator.log', 'w') if os.path.exists(f'{args.log_path}{mode}_coordinator.log') else open(f'{args.log_path}{mode}_coordinator.log', 'x')
     mode += "_iter0"
-    llm_configs_dict = json.load(open('./llm_configs.json','r'))
+    llm_configs_dict = json.load(open('/home/yas/Documentos/ihealth-group/multiagents/Organized-LLM-Agents/envs/cwah/scripts/llm_configs.json','r'))
     if args.lm_id_list is None and args.llm_config_list is None:
         raise NotImplementedError
     elif len(args.lm_id_list) == 1:
@@ -93,7 +95,7 @@ if __name__ == '__main__':
         return UnityEnvironment(num_agents=args.agent_num,
                                max_episode_length=args.max_episode_length,
                                port_id=env_id,
-                               env_task_set=env_task_set,
+                               env_task_set=pickle.load(open(args.dataset_path, 'rb')),
                                agent_goals=['LLM' for i in range(args.agent_num)],
                                observation_types=[args.obs_type for i in range(args.agent_num)],
                                use_editor=args.use_editor,

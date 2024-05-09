@@ -14,13 +14,13 @@ sys.path.append(os.path.join('..', '..', 'virtualhome', 'simulation'))
 from tools.plotting_code_planner import plot_graph_2d_v2 as plot_graph_2d
 
 # import plotly.io
-import agents
-import utils.utils_environment as utils_environment
+import envs.cwah.agents
+import envs.cwah.utils.utils_environment as utils_environment
 import argparse
 import pickle as pkl
 from flask import Flask, render_template, request, redirect, Response, send_file
 # from virtualhome.simulation.unity_simulator import comm_unity
-from envs.unity_environment import UnityEnvironment
+import virtualhome.simulation.evolving_graph.utils as vh_utils
 import vh_tools
 import random, json
 import cv2

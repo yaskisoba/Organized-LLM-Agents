@@ -11,9 +11,9 @@ import pickle
 
 from . import belief
 from . import utils
-from envs.graph_env import VhGraphEnv
+from envs.cwah.envs.graph_env import VhGraphEnv
 #
-from MCTS import *
+from envs.cwah.MCTS import *
 
 import sys
 

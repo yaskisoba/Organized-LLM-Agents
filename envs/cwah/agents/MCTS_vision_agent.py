@@ -16,14 +16,14 @@ import open3d as o3d
 from . import belief
 from . import utils
 from . import vision_pipeline
-from envs.graph_env import VhGraphEnv
+from envs.cwah.envs.graph_env import VhGraphEnv
 #
-from MCTS import *
-from agents.MCTS_agent import *
+from envs.cwah.MCTS import *
+from envs.cwah.agents.MCTS_agent import *
 
 import sys
 sys.path.append('..')
-from utils import utils_environment as utils_env
+from envs.cwah.utils import utils_environment as utils_env
 
 class MCTS_vision_agent():
     """
