@@ -1,4 +1,4 @@
-from LLM import *
+from envs.cwah.LLM import *
 from collections import defaultdict
 
 class LLM_agent:

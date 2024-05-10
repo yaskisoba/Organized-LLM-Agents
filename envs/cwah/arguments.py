@@ -115,7 +115,7 @@ def get_args():
     parser.add_argument("--n", default=1, type=int)
     parser.add_argument("--logprobs", default=1, type=int)
     parser.add_argument("--echo", action='store_true', help="to include prompt in the outputs")
-    parser.add_argument("--agent_num", default=3, type=int)
+    parser.add_argument("--agent_num", default=2, type=int)
     parser.add_argument("--config", default = None, type = str, help="config file")
     
     # comm args

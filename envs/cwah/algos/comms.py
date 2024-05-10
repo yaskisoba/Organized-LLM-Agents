@@ -149,6 +149,7 @@ def select_target(prompt, autogen_agent, history, cur_history, info: Dict, llm_a
     # print("Prompt for selecting speaker.\n", prompt.format(dialogue=dialog))
 
     for _ in range(3):
+        outputs = ''
         # print(message[0]["content"])
         try:
             outputs, usage = llm_agent.LLM.generator(message, llm_agent.LLM.sampling_params)

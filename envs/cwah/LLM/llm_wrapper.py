@@ -71,8 +71,11 @@ class ChatCompletionManager:
 
     def create(self, messages, config_list=None, *args, **kwargs):
         if kwargs.get('human_agent') is None:
-            return oai.ChatCompletion.create(messages=messages, config_list=config_list, request_timeout=600, *args, **kwargs)
-
+            try:
+              test = oai.ChatCompletion.create(context=messages, config_list=config_list, **kwargs)
+              return test
+            except Exception as e:
+              print(e)
         # human player
         else:
             port = kwargs['human_agent']

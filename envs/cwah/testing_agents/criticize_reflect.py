@@ -30,7 +30,7 @@ if __name__ == '__main__':
     elif len(args.lm_id_list) == 1:
         args.lm_id_list = [args.lm_id_list[0]] * args.agent_num
     else:
-        assert len(args.lm_id_list) == args.agent_num, "lm_id_list must be the same length as agent_num"
+        assert len(args.lm_id_list) == args.agent_num, "lm_id_list must be the same le  ngth as agent_num"
     
     if args.llm_config_list is None:
         args.llm_config_list = []
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         return UnityEnvironment(num_agents=args.agent_num,
                                max_episode_length=args.max_episode_length,
                                port_id=env_id,
-                               env_task_set=pickle.load(open(args.dataset_path, 'rb')),
+                               env_task_set=env_task_set,
                                agent_goals=['LLM' for i in range(args.agent_num)],
                                observation_types=[args.obs_type for i in range(args.agent_num)],
                                use_editor=args.use_editor,

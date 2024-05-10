@@ -114,7 +114,7 @@ notebook_shim==0.2.2
 numpy
 oauthlib==3.2.2
 open3d==0.16.0
-openai==0.27.0
+openai
 opencv-python==4.7.0.68
 opencv-python-headless==4.7.0.68
 openmim==0.3.7
