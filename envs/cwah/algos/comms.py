@@ -1,3 +1,5 @@
+import time
+
 from autogen import AssistantAgent
 from autogen import oai
 from autogen.agentchat.agent import Agent
@@ -154,7 +156,9 @@ def select_target(prompt, autogen_agent, history, cur_history, info: Dict, llm_a
         try:
             outputs, usage = llm_agent.LLM.generator(message, llm_agent.LLM.sampling_params)
             response_json = json.loads(outputs)
-            receiver, content, thoughts = response_json["receiver"], response_json["message"], response_json["thoughts"]
+            receiver = response_json["receiver"] if response_json != {} else []
+            content = response_json["message"] if response_json != {} else []
+            thoughts = response_json["thoughts"] if response_json != {} else []
             break
         except Exception as e:
             print(outputs)

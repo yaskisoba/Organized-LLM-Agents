@@ -73,7 +73,7 @@ class ChatCompletionManager:
         if kwargs.get('human_agent') is None:
             try:
               config_list[0]['messages'] = messages
-              test = oai.ChatCompletion.create(config_list=config_list, *args, **kwargs)
+              test = oai.ChatCompletion.create(context=messages, config_list=config_list, *args, **kwargs)
               return test
             except Exception as e:
               print(e)
